@@ -12,7 +12,8 @@ I focus on `algorithm for performance`, `architecture` and `code readability`.
 
 ## Experience
 
-- Windows Client Software Developer (C#, .NET, 2017.03 ~ Now, Pentacute [http://www.penta-cube.com/])
+- **Windows Client Software Developer (C#, .NET)**    
+ _[Pentacute](http://www.penta-cube.com/, "Pentacube") (2017.03 ~ )_
 
 
 <!--
