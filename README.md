@@ -1,4 +1,10 @@
-### Hi there 👋
+## Hi there, I'm Junyoung Park 👋
+
+I'm software developer who focused on performance, architecture and readability when I develop project from south korea.
+
+## Experience
+
+- Windows Client Software Developer (C#, .NET, 2017.03 ~ Now, Pentacute [http://www.penta-cube.com/])
 
 <!--
 **jaywapp/jaywapp** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
