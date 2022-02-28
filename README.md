@@ -1,4 +1,4 @@
-## Hi there, I'm Junyoung Park 👋
+## Junyoung Park 👋
 
 I'm software developer who focused on performance, architecture and readability when I develop project from south korea.
 
