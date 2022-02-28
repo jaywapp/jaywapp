@@ -7,7 +7,8 @@
 
 ## Junyoung Park 👋
 
-I'm software developer who focused on performance, architecture and readability when I develop project from south korea.
+I'm software developer from south korea.   
+I focus on `algorithm for performance`, `architecture` and `code readability`.
 
 ## Experience
 
