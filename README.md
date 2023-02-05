@@ -12,7 +12,7 @@ I focus on `algorithm for performance`, `architecture` and `code readability`.
 
 ## Experience
 
-- **Windows Client Software Developer (C#, .NET)** - _[Pentacue](http://www.penta-cube.com/ "Pentacube") (2017.03 ~ )_
+- **Windows Client Software Developer (C#, .NET)** - _[Pentacube](http://www.penta-cube.com/ "Pentacube") (2017.03 ~ )_
 
 
 <!--
