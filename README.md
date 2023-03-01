@@ -6,27 +6,11 @@
 	
 
 ## Junyoung Park 👋
-
 I'm software developer from south korea.   
 I focus on `algorithm for performance`, `architecture` and `code readability`.
 
 ## Experience
-
 - **Windows Client Software Developer (C#, .NET)** - _[Pentacube](http://www.penta-cube.com/ "Pentacube") (2017.03 ~ )_
 
-
-<!--
-**jaywapp/jaywapp** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Projects
+:link: https://github.com/jaywapp/Projects
