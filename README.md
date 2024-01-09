@@ -10,7 +10,8 @@ I'm software developer from south korea.
 I focus on `algorithm for performance`, `architecture` and `code readability`.
 
 ## Experience
-- **Windows Client Software Developer (C#, .NET)** - _[Pentacube](http://www.penta-cube.com/ "Pentacube") (2017.03 ~ )_
+- **Windows Client Software Developer (C#, .NET)** -  [Smilegate RPG](https://www.smilegate.com/ko/) (2023.07 ~)
+- **Windows Client Software Developer (C#, .NET)** - _[Pentacube](http://www.penta-cube.com/ "Pentacube") (2017.03 ~ 2023.06)_
 
 ## Projects
 :link: https://github.com/jaywapp/Projects
