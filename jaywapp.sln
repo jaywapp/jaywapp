@@ -1,10 +1,33 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jaywapp.Infrastructure", "Jaywapp.Infrastructure\Jaywapp.Infrastructure.csproj", "{99F846FA-52A3-4B0D-8C43-B20ED3F98C90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jaywapp.Infrastructure.Tests", "Jaywapp.Infrastructure\UnitTest\Jaywapp.Infrastructure.Tests\Jaywapp.Infrastructure.Tests.csproj", "{98530F63-A1AA-4C77-B1EB-1D1856568BEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FFA90265-595B-452F-8EDD-CB5ADA598E28}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99F846FA-52A3-4B0D-8C43-B20ED3F98C90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F846FA-52A3-4B0D-8C43-B20ED3F98C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F846FA-52A3-4B0D-8C43-B20ED3F98C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F846FA-52A3-4B0D-8C43-B20ED3F98C90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98530F63-A1AA-4C77-B1EB-1D1856568BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98530F63-A1AA-4C77-B1EB-1D1856568BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98530F63-A1AA-4C77-B1EB-1D1856568BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98530F63-A1AA-4C77-B1EB-1D1856568BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98530F63-A1AA-4C77-B1EB-1D1856568BEC} = {FFA90265-595B-452F-8EDD-CB5ADA598E28}
 	EndGlobalSection
 EndGlobal

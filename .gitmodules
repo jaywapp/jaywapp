@@ -1,0 +1,3 @@
+[submodule "Jaywapp.Infrastructure"]
+	path = Jaywapp.Infrastructure
+	url = git@github.com:jaywapp/Jaywapp.Infrastructure.git
