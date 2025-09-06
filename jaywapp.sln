@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jaywapp.Infrastructure.Test
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FFA90265-595B-452F-8EDD-CB5ADA598E28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jaywapp.Wpf", "Jaywapp.Wpf\Jaywapp.Wpf.csproj", "{4CFDA34F-6917-4CD8-98E9-E4CEB1D35E83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jaywapp.Wpf.Tests", "Jaywapp.Wpf\UnitTests\Jaywapp.Wpf.Tests\Jaywapp.Wpf.Tests.csproj", "{07775045-E65F-4AF2-9967-855C406A6701}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,11 +27,20 @@ Global
 		{98530F63-A1AA-4C77-B1EB-1D1856568BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98530F63-A1AA-4C77-B1EB-1D1856568BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98530F63-A1AA-4C77-B1EB-1D1856568BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CFDA34F-6917-4CD8-98E9-E4CEB1D35E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFDA34F-6917-4CD8-98E9-E4CEB1D35E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFDA34F-6917-4CD8-98E9-E4CEB1D35E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFDA34F-6917-4CD8-98E9-E4CEB1D35E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07775045-E65F-4AF2-9967-855C406A6701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07775045-E65F-4AF2-9967-855C406A6701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07775045-E65F-4AF2-9967-855C406A6701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07775045-E65F-4AF2-9967-855C406A6701}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{98530F63-A1AA-4C77-B1EB-1D1856568BEC} = {FFA90265-595B-452F-8EDD-CB5ADA598E28}
+		{07775045-E65F-4AF2-9967-855C406A6701} = {FFA90265-595B-452F-8EDD-CB5ADA598E28}
 	EndGlobalSection
 EndGlobal
