@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <PackageId>Jaywapp.Common</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>jaywapp</Authors>
+    <Company>jaywapp</Company>
+    <Description>Domain-independent reusable components for cross-cutting concerns.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NeutralLanguage>ko</NeutralLanguage>
+  </PropertyGroup>
+
+</Project>
