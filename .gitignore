@@ -255,3 +255,8 @@ paket-files/
 !7z.dll
 
 SetupFile/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
