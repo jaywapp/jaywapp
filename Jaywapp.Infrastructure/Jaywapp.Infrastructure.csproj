@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Multi-target: core utilities on netstandard; WPF-enabled on desktop targets -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <!-- NuGet metadata -->
+    <PackageId>Jaywapp.Infrastructure</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>jaywapp</Authors>
+    <Company>jaywapp</Company>
+    <Description>Common utilities and helpers (including WPF converters) used across Jaywapp projects.</Description>
+    <RepositoryUrl>https://github.com/jaywapp/Jaywapp.Infrastructure</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/jaywapp/Jaywapp.Infrastructure</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <NeutralLanguage>ko</NeutralLanguage>
+  </PropertyGroup>
+
+  <!-- Enable WPF for .NET 6+ Windows target -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0-windows7.0'">
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <!-- Add WPF references for .NET Framework target -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+
+  <!-- Exclude UnitTest, Common module, and docs folders from all targets -->
+  <ItemGroup>
+    <Compile Remove="UnitTest\**" />
+    <Compile Remove="Jaywapp.Common\**" />
+    <Compile Remove="docs\**" />
+    <EmbeddedResource Remove="UnitTest\**" />
+    <EmbeddedResource Remove="Jaywapp.Common\**" />
+    <None Remove="UnitTest\**" />
+    <None Remove="Jaywapp.Common\**" />
+  </ItemGroup>
+
+  <!-- On netstandard2.0, exclude WPF-specific files -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <Compile Remove="Converters\**" />
+    <Compile Remove="Helpers\ColorHelper.cs" />
+  </ItemGroup>
+
+  <!-- Ensure README is packed into the NuGet package -->
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+</Project>

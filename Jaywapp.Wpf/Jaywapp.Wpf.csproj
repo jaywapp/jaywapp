@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Multi-target Windows TFMs for WPF consumers -->
+    <TargetFrameworks>net48;net6.0-windows7.0;net8.0-windows7.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <!-- Use latest C# to support global using/nullable across TFMs (incl. net48) -->
+    <LangVersion>latest</LangVersion>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- NuGet metadata -->
+    <PackageId>Jaywapp.Wpf</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>jaywapp</Authors>
+    <Company>jaywapp</Company>
+    <Description>WPF converters and helpers used across Jaywapp projects.</Description>
+    <RepositoryUrl>https://github.com/jaywapp/Jaywapp.Wpf</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/jaywapp/Jaywapp.Wpf</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <NeutralLanguage>ko</NeutralLanguage>
+  </PropertyGroup>
+
+  <!-- Exclude UnitTests from packing/build -->
+  <ItemGroup>
+    <Compile Remove="UnitTests\**" />
+    <EmbeddedResource Remove="UnitTests\**" />
+    <None Remove="UnitTests\**" />
+    <Page Remove="UnitTests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Jaywapp.Infrastructure" Version="0.1.5" />
+    <PackageReference Include="Prism.Core" Version="6.3.0" />
+    <PackageReference Include="Prism.Unity" Version="6.3.0" />
+    <PackageReference Include="Prism.Wpf" Version="6.3.0" />
+    <PackageReference Include="ReactiveUI" Version="21.0.1" />
+    <PackageReference Include="ReactiveUI.WPF" Version="21.0.1" />
+    <PackageReference Include="System.Reactive.Linq" Version="6.0.2" />
+  </ItemGroup>
+
+  <!-- Add WPF refs for .NET Framework target -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+    <!-- Provide .NET Framework reference assemblies on CI agents -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <!-- Ensure README is packed -->
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+</Project>
