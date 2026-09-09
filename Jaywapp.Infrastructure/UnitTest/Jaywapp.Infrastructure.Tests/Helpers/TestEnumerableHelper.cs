@@ -7,6 +7,37 @@ namespace Jaywapp.Infrastructure.Tests.Helpers
     public class TestEnumerableHelper
     {
         [Test]
+        public void TestChainPairing_Circular_EnumeratesSourceOnce()
+        {
+            var enumerations = 0;
+            IEnumerable<int> Source()
+            {
+                if (++enumerations > 1) throw new InvalidOperationException("Repeated enumeration");
+                yield return 1;
+                yield return 2;
+                yield return 3;
+            }
+
+            Assert.That(Source().ChainPairing(true), Is.EqualTo(new[] { (1, 2), (2, 3), (3, 1) }));
+            Assert.That(enumerations, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void TestChainPairing_NullSource_PreservesDeferredArgumentFailure()
+        {
+            var pairs = EnumerableHelper.ChainPairing<int>(null!);
+            Assert.Throws<ArgumentNullException>(() => pairs.ToList());
+        }
+
+        [TestCase(false)]
+        [TestCase(true)]
+        public void TestChainPairing_EmptyAndSingleton_RemainEmpty(bool circular)
+        {
+            Assert.That(Array.Empty<int>().ChainPairing(circular), Is.Empty);
+            Assert.That(new[] { 7 }.ChainPairing(circular), Is.Empty);
+        }
+
+        [Test]
         public void TestIsNullOrEmpty_NullCollection_ReturnsTrue()
         {
             // Act

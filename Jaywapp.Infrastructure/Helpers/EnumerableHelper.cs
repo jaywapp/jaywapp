@@ -61,7 +61,7 @@ namespace Jaywapp.Infrastructure.Helpers
                 }
 
                 if (isCircular)
-                    yield return (items.Last(), items.First());
+                    yield return (itemList[itemList.Count - 1], itemList[0]);
             }
         }
     }
