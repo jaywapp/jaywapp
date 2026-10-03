@@ -1,0 +1,466 @@
+<title>jaywapp README Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a review desk. Narrow notes column beside a faithful GitHub-profile preview; tabs switch concept. */
+:root{
+  --desk:#eef0ec; --paper:#fbfbf9; --ink:#1d2320; --ink-2:#56605a; --rule:#d5dad4; --accent:#2f6b4f; --accent-ink:#ffffff;
+  --gh-bg:#ffffff; --gh-fg:#1f2328; --gh-muted:#59636e; --gh-border:#d1d9e0; --gh-link:#0969da; --gh-subtle:#f6f8fa; --gh-code:#eff1f3;
+  --ph:#e7ebe6; --ph-ink:#56605a;
+  --f-ui:"IBM Plex Sans KR",system-ui,-apple-system,"Malgun Gothic",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Consolas,monospace;
+  --f-gh:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --desk:#141816; --paper:#1b201d; --ink:#e4e9e5; --ink-2:#9aa59e; --rule:#2e3631; --accent:#7fc4a0; --accent-ink:#0f1612;
+  --gh-bg:#0d1117; --gh-fg:#f0f6fc; --gh-muted:#9198a1; --gh-border:#3d444d; --gh-link:#4493f8; --gh-subtle:#151b23; --gh-code:#262c36;
+  --ph:#232a26; --ph-ink:#9aa59e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --desk:#141816; --paper:#1b201d; --ink:#e4e9e5; --ink-2:#9aa59e; --rule:#2e3631; --accent:#7fc4a0; --accent-ink:#0f1612;
+  --gh-bg:#0d1117; --gh-fg:#f0f6fc; --gh-muted:#9198a1; --gh-border:#3d444d; --gh-link:#4493f8; --gh-subtle:#151b23; --gh-code:#262c36;
+  --ph:#232a26; --ph-ink:#9aa59e; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--desk);color:var(--ink);font:15px/1.6 var(--f-ui);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1240px;margin:0 auto;display:grid;gap:24px}
+header h1{font-size:28px;line-height:1.25;margin:0 0 6px;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+header p{margin:0;color:var(--ink-2);max-width:68ch}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tab{font:600 14px var(--f-ui);border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:9px 14px;border-radius:999px;cursor:pointer;display:flex;gap:8px;align-items:baseline}
+.tab small{font:500 12px var(--f-mono);color:var(--ink-2)}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.tab[aria-selected="true"] small{color:var(--accent-ink);opacity:.8}
+.tab:focus-visible,.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.spacer{flex:1}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--paper)}
+.seg button{font:500 13px var(--f-ui);border:0;background:transparent;color:var(--ink-2);padding:7px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--desk)}
+.stage{display:grid;grid-template-columns:300px minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:900px){.stage{grid-template-columns:minmax(0,1fr)}}
+.notes{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:20px;display:grid;gap:16px;min-width:0}
+.notes h2{margin:0;font-size:20px;line-height:1.3}
+.notes .tag{font:500 12px var(--f-mono);color:var(--ink-2)}
+.notes dl{margin:0;display:grid;gap:12px}
+.notes dt{font:500 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:4px}
+.notes dd{margin:0;font-size:14px}
+.notes ul{margin:0;padding-left:18px;font-size:14px}
+.preview-wrap{min-width:0;display:flex;justify-content:center}
+.gh{width:100%;max-width:880px;background:var(--gh-bg);color:var(--gh-fg);border:1px solid var(--gh-border);border-radius:8px;transition:max-width .25s ease}
+.gh.mobile{max-width:390px}
+.gh-head{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--gh-border);font:12px var(--f-mono);color:var(--gh-muted)}
+.gh-head b{color:var(--gh-fg);font-weight:500}
+.md{font:16px/1.5 var(--f-gh);padding:24px 32px 32px;overflow-wrap:break-word;min-width:0}
+.gh.mobile .md{padding:16px}
+.md>*:first-child{margin-top:0!important}
+.md h1,.md h2,.md h3{font-weight:600;line-height:1.25;margin:24px 0 16px}
+.md h1{font-size:2em;padding-bottom:.3em;border-bottom:1px solid var(--gh-border)}
+.md h2{font-size:1.5em;padding-bottom:.3em;border-bottom:1px solid var(--gh-border)}
+.md h3{font-size:1.25em}
+.md p,.md ul,.md table,.md pre{margin:0 0 16px}
+.md ul{padding-left:2em}
+.md li+li{margin-top:.25em}
+.md a{color:var(--gh-link);text-decoration:none}
+.md a:hover{text-decoration:underline}
+.md hr{height:.25em;background:var(--gh-border);border:0;margin:24px 0}
+.md sub{font-size:75%;color:inherit}
+.md table{border-collapse:collapse;display:block;overflow-x:auto;max-width:100%}
+.md th,.md td{border:1px solid var(--gh-border);padding:6px 13px}
+.md th{font-weight:600}
+.md tr:nth-child(2n){background:var(--gh-subtle)}
+.md td>:last-child{margin-bottom:0}
+.md pre{font:13.6px/1.45 ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;background:var(--gh-subtle);padding:16px;border-radius:6px;overflow-x:auto}
+.md code{font:85% ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--gh-code);padding:.2em .4em;border-radius:6px}
+.md [align="center"]{text-align:center}
+.badge{display:inline-flex;vertical-align:middle;font:600 11px/20px Verdana,Geneva,sans-serif;border-radius:3px;overflow:hidden;white-space:nowrap;margin:2px 1px}
+.badge span{padding:0 6px;color:#fff}
+.badge .l{background:#555}
+.badge.big{font:700 11px/28px Verdana,Geneva,sans-serif;letter-spacing:.1em;text-transform:uppercase;border-radius:0}
+.badge.big span{padding:0 11px}
+.ph{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--ph);color:var(--ph-ink);border:1px dashed var(--gh-border);border-radius:6px;font:12px/1.4 var(--f-mono);padding:12px;margin:4px 0}
+.ph.stats{height:140px;max-width:440px}
+.ph.snake{height:110px;width:100%}
+.posts{list-style:none;padding:0!important}
+.posts li{display:flex;gap:10px;color:var(--gh-muted)}
+.posts li span{color:var(--gh-fg)}
+.posts em{font-style:normal;font:11px var(--f-mono);border:1px solid var(--gh-border);border-radius:999px;padding:0 6px;align-self:center}
+.shared{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.shared h3{margin:0 0 8px;font-size:15px}
+.shared ul{margin:0;padding-left:18px;font-size:14px;color:var(--ink-2)}
+.shared li strong{color:var(--ink);font-weight:600}
+.ask{border-left:3px solid var(--accent);padding:4px 0 4px 14px;color:var(--ink)}
+.ask p{margin:0}
+@media (prefers-reduced-motion:reduce){.gh{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">github.com/jaywapp · README refresh · 2026-10</div>
+    <h1>프로필 README 콘셉트 3종</h1>
+    <p>세 시안은 같은 내용(소개, 대표 프로젝트 12개, 최근 글, 경력, 기술, 활동 그래프)을 담고 있고, 레이아웃·타이포그래피·영한 병기 방식만 다릅니다. 오른쪽 미리보기는 GitHub 렌더링을 흉내 낸 화면입니다. 점선 상자는 GitHub Actions가 자동으로 채울 영역입니다.</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="콘셉트 선택">
+    <button class="tab" role="tab" id="t1" aria-selected="true" data-i="0">01 Minimal Editorial <small>미니멀</small></button>
+    <button class="tab" role="tab" id="t2" aria-selected="false" data-i="1">02 Card Grid <small>카드</small></button>
+    <button class="tab" role="tab" id="t3" aria-selected="false" data-i="2">03 Terminal <small>터미널</small></button>
+    <span class="spacer"></span>
+    <div class="seg" aria-label="미리보기 폭">
+      <button id="w-desk" aria-pressed="true">Desktop</button>
+      <button id="w-mob" aria-pressed="false">Mobile 390px</button>
+    </div>
+  </div>
+
+  <div class="stage">
+    <aside class="notes" id="notes" aria-live="polite"></aside>
+    <div class="preview-wrap">
+      <div class="gh" id="gh">
+        <div class="gh-head"><b>jaywapp</b> / README.md</div>
+        <div class="md" id="md"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="shared">
+    <div>
+      <h3>세 시안 공통으로 바뀌는 데이터</h3>
+      <ul>
+        <li><strong>대표 프로젝트 교체</strong>: 최근 활동한 공개 저장소 11개로 바꿉니다. AI 에이전트 도구, 데스크톱 도구, 앱 세 묶음입니다.</li>
+        <li><strong>링크 정리</strong>: 비공개인 baby-calendar는 뺍니다. crewith, asset-management, projects는 실제 저장소 이름으로 고칩니다.</li>
+        <li><strong>배지 정리</strong>: 종료된 Hits 카운터와 동작하지 않는 <code>&amp;link=</code> 파라미터를 없앱니다.</li>
+        <li><strong>추가</strong>: 위키(jaywapp-wiki.vercel.app) 링크를 넣고, 기술 목록에 Claude Code·Codex·MCP·Supabase·Python을 더합니다.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>자동 갱신 (GitHub Actions)</h3>
+      <ul>
+        <li><strong>최근 글</strong>: 매일 티스토리 RSS를 읽어 README의 <code>BLOG-POST-LIST</code> 구간을 다시 씁니다.</li>
+        <li><strong>통계 카드</strong>: 외부 서비스 대신 워크플로가 직접 SVG를 만들어 <code>output</code> 브랜치에 올립니다. 외부 서비스가 멈춰도 깨지지 않습니다.</li>
+        <li><strong>기여 그래프 스네이크</strong>: 라이트·다크 두 벌을 같은 <code>output</code> 브랜치에 생성합니다.</li>
+      </ul>
+    </div>
+    <div class="ask">
+      <h3>선택 방법</h3>
+      <p>대화창에 번호와 피드백을 남겨 주세요. 예: "02로, 카드 배지는 빼 줘." 섞어서 고르셔도 됩니다. 예: "01 레이아웃에 03의 헤더."</p>
+    </div>
+  </section>
+</div>
+
+<script type="text/plain" id="src0"># Junyoung Park
+
+**Dev Productivity / Tooling Engineer** · South Korea
+
+I build tools that help engineers ship faster. Most of my career is Windows desktop software in C# and .NET; lately I spend my time on AI agent workflows with Claude Code and Codex.
+<br><sub>엔지니어가 더 빠르게 일하도록 돕는 도구를 만듭니다. C#/.NET Windows 데스크톱 개발을 오래 해 왔고, 요즘은 Claude Code·Codex 기반 AI 에이전트 워크플로에 집중하고 있습니다.</sub>
+
+[Portfolio](https://jaywapp.github.io) · [Blog](https://jaywapp.tistory.com) · [Wiki](https://jaywapp-wiki.vercel.app) · [LinkedIn](https://www.linkedin.com/in/jaywapp16/) · [jaywapp16@gmail.com](mailto:jaywapp16@gmail.com)
+
+---
+
+### Selected work <sub>대표 작업</sub>
+
+**AI agent tooling** <sub>AI 에이전트 도구</sub>
+
+- **[p4-harness](https://github.com/jaywapp/p4-harness)** — One set of Perforce rules, CLI and state shared by Claude Code and Codex.<br><sub>Claude Code와 Codex가 같은 Perforce 작업 규칙·CLI·상태를 쓰게 하는 하네스</sub>
+- **[task-token-meter](https://github.com/jaywapp/task-token-meter)** — Shows how many tokens a single finished task used, from local logs.<br><sub>작업 단위 토큰 사용량을 로컬 기록으로 집계하는 Windows CLI</sub>
+- **[cc-jsonl-monitor](https://github.com/jaywapp/cc-jsonl-monitor)** — A Chrome extension for browsing Claude Code session logs.<br><sub>Claude Code JSONL 기록 뷰어 (Chrome 확장)</sub>
+- **[toss-readonly-mcp](https://github.com/jaywapp/toss-readonly-mcp)** — Read-only MCP server for Toss Securities market data.<br><sub>토스증권 Open API 읽기 전용 MCP 플러그인</sub>
+- **[jaywapp-marketplace](https://github.com/jaywapp/jaywapp-marketplace)** — My plugin marketplace for Claude Code, Codex and Cursor.<br><sub>Claude Code·Codex·Cursor 플러그인 마켓플레이스</sub>
+
+**Desktop & engine tools** <sub>데스크톱·엔진 도구</sub>
+
+- **[WAM](https://github.com/jaywapp/wam-releases)** — Work As a Map, a Windows app with a plugin system.<br><sub>플러그인 구조의 Windows 업무 앱 (설치본 배포)</sub>
+- **[UnrealEditorBridge](https://github.com/jaywapp/UnrealEditorBridge)** — Real-time IPC between the UE5 Editor and .NET/WPF tools.<br><sub>UE5 에디터와 .NET/WPF 도구 간 실시간 IPC 브리지</sub>
+- **[jaywapp-libs](https://github.com/jaywapp/jaywapp-libs)** — My C# library monorepo.<br><sub>C# 공통 라이브러리 모노레포</sub>
+
+**Apps** <sub>앱</sub>
+
+- **[gyungchung](https://github.com/jaywapp/gyungchung)** — Clubhouse web app for a futsal club, with an MCP server for its admins.<br><sub>풋살 클럽 회원·회비·일정 관리 웹앱과 운영진용 MCP 서버</sub>
+- **[vlytics](https://github.com/jaywapp/vlytics)** — Experiment platform for V-League match prediction and review.<br><sub>V리그 경기 예측·사후 평가 실험 플랫폼</sub>
+- **[asset-management](https://github.com/jaywapp/asset-management)** — Family asset dashboard with Claude-written reports.<br><sub>Claude 리포트가 붙은 가족 자산관리 대시보드</sub>
+
+<sub>All projects · 전체 프로젝트 → [jaywapp/projects](https://github.com/jaywapp/projects)</sub>
+
+### Latest posts <sub>최근 글</sub>
+
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+
+### Experience <sub>경력</sub>
+
+- **2023.07 – now** · [Smilegate](https://www.smilegate.com/ko/) · Windows Client Software Developer
+- **2017.03 – 2023.06** · [Pentacube](http://www.penta-cube.com/) · Windows Client Software Developer
+
+### Toolbox <sub>기술</sub>
+
+C# · .NET · WPF · TypeScript · Next.js · Python · Supabase · Claude Code · Codex · MCP
+
+<img src="https://raw.githubusercontent.com/jaywapp/jaywapp/output/stats.svg" alt="GitHub stats" height="140">
+
+<img src="https://raw.githubusercontent.com/jaywapp/jaywapp/output/github-contribution-grid-snake.svg" alt="Contribution graph" width="100%">
+</script>
+<script type="text/plain" id="src1"><div align="center">
+
+## Junyoung Park
+
+**Dev Productivity / Tooling Engineer**
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-jaywapp.github.io-24292f?style=flat-square&logo=github)](https://jaywapp.github.io)
+[![Blog](https://img.shields.io/badge/Blog-tistory-ff5a4a?style=flat-square)](https://jaywapp.tistory.com)
+[![Wiki](https://img.shields.io/badge/Wiki-vercel-000000?style=flat-square&logo=vercel)](https://jaywapp-wiki.vercel.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-jaywapp16-0a66c2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/jaywapp16/)
+[![Email](https://img.shields.io/badge/Email-jaywapp16@gmail.com-d14836?style=flat-square&logo=gmail&logoColor=white)](mailto:jaywapp16@gmail.com)
+
+</div>
+
+| English | 한국어 |
+|---|---|
+| I build tools that help engineers ship faster. Windows desktop software in C#/.NET is my background; AI agent workflows on Claude Code and Codex are my current focus. | 엔지니어가 더 빠르게 일하도록 돕는 도구를 만듭니다. C#/.NET Windows 데스크톱 개발이 기반이고, 지금은 Claude Code·Codex 기반 AI 에이전트 워크플로에 집중합니다. |
+
+### Featured projects · 대표 프로젝트
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**[p4-harness](https://github.com/jaywapp/p4-harness)** ![AI agent](https://img.shields.io/badge/AI_agent-8250df?style=flat-square)<br>
+Shared Perforce rules, CLI and state for Claude Code and Codex.<br>
+<sub>Claude Code·Codex 공용 Perforce 작업 하네스</sub>
+
+</td>
+<td width="50%" valign="top">
+
+**[task-token-meter](https://github.com/jaywapp/task-token-meter)** ![AI agent](https://img.shields.io/badge/AI_agent-8250df?style=flat-square)<br>
+Token usage per finished task, read from local logs.<br>
+<sub>작업 단위 토큰 사용량 Windows CLI</sub>
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+**[cc-jsonl-monitor](https://github.com/jaywapp/cc-jsonl-monitor)** ![AI agent](https://img.shields.io/badge/AI_agent-8250df?style=flat-square)<br>
+Chrome extension for browsing Claude Code session logs.<br>
+<sub>Claude Code JSONL 기록 뷰어</sub>
+
+</td>
+<td valign="top">
+
+**[toss-readonly-mcp](https://github.com/jaywapp/toss-readonly-mcp)** ![AI agent](https://img.shields.io/badge/AI_agent-8250df?style=flat-square)<br>
+Read-only MCP server for Toss Securities market data.<br>
+<sub>토스증권 읽기 전용 MCP 플러그인</sub>
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+**[jaywapp-marketplace](https://github.com/jaywapp/jaywapp-marketplace)** ![AI agent](https://img.shields.io/badge/AI_agent-8250df?style=flat-square)<br>
+My plugin marketplace for Claude Code, Codex and Cursor.<br>
+<sub>Claude Code·Codex·Cursor 플러그인 마켓플레이스</sub>
+
+</td>
+<td valign="top">
+
+**[WAM](https://github.com/jaywapp/wam-releases)** ![Desktop](https://img.shields.io/badge/Desktop-0969da?style=flat-square)<br>
+Work As a Map, a Windows app with a plugin system.<br>
+<sub>플러그인 구조의 Windows 업무 앱</sub>
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+**[UnrealEditorBridge](https://github.com/jaywapp/UnrealEditorBridge)** ![Desktop](https://img.shields.io/badge/Desktop-0969da?style=flat-square)<br>
+Real-time IPC between the UE5 Editor and .NET/WPF tools.<br>
+<sub>UE5 에디터 ↔ .NET/WPF 실시간 IPC</sub>
+
+</td>
+<td valign="top">
+
+**[jaywapp-libs](https://github.com/jaywapp/jaywapp-libs)** ![Library](https://img.shields.io/badge/Library-6e7781?style=flat-square)<br>
+My C# library monorepo.<br>
+<sub>C# 공통 라이브러리 모노레포</sub>
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+**[gyungchung](https://github.com/jaywapp/gyungchung)** ![App](https://img.shields.io/badge/App-1a7f37?style=flat-square)<br>
+Clubhouse web app for a futsal club, plus an admin MCP server.<br>
+<sub>풋살 클럽 관리 웹앱 + 운영진 MCP</sub>
+
+</td>
+<td valign="top">
+
+**[vlytics](https://github.com/jaywapp/vlytics)** ![App](https://img.shields.io/badge/App-1a7f37?style=flat-square)<br>
+Experiment platform for V-League match prediction and review.<br>
+<sub>V리그 경기 예측·평가 실험 플랫폼</sub>
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+**[asset-management](https://github.com/jaywapp/asset-management)** ![App](https://img.shields.io/badge/App-1a7f37?style=flat-square)<br>
+Family asset dashboard with Claude-written reports.<br>
+<sub>Claude 리포트 가족 자산 대시보드</sub>
+
+</td>
+<td valign="top">
+
+**[All projects →](https://github.com/jaywapp/projects)** ![Index](https://img.shields.io/badge/Index-6e7781?style=flat-square)<br>
+Every project, grouped by area.<br>
+<sub>전체 프로젝트 목록</sub>
+
+</td>
+</tr>
+</table>
+
+### Tech stack · 기술
+
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512bd4?style=for-the-badge&logo=dotnet&logoColor=white)
+![WPF](https://img.shields.io/badge/WPF-0078d7?style=for-the-badge&logo=windows&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&logo=typescript&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776ab?style=for-the-badge&logo=python&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3fcf8e?style=for-the-badge&logo=supabase&logoColor=white)
+![Claude Code](https://img.shields.io/badge/Claude_Code-d97757?style=for-the-badge&logo=anthropic&logoColor=white)
+![Codex](https://img.shields.io/badge/Codex-000000?style=for-the-badge&logo=openai&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-000000?style=for-the-badge&logo=modelcontextprotocol&logoColor=white)
+
+### Activity · 활동
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jaywapp/jaywapp/output/stats.svg" alt="GitHub stats" height="160">
+</p>
+
+<img src="https://raw.githubusercontent.com/jaywapp/jaywapp/output/github-contribution-grid-snake.svg" alt="Contribution graph" width="100%">
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**Latest posts · 최근 글**
+
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+
+</td>
+<td width="50%" valign="top">
+
+**Experience · 경력**
+
+| Period | Company | Role |
+|---|---|---|
+| 2023.07 – now | [Smilegate](https://www.smilegate.com/ko/) | Windows Client Developer |
+| 2017.03 – 2023.06 | [Pentacube](http://www.penta-cube.com/) | Windows Client Developer |
+
+</td>
+</tr>
+</table>
+</script>
+<script type="text/plain" id="src2"><pre>
+<b>jaywapp@github</b>:~$ whoami
+Junyoung Park — Dev Productivity / Tooling Engineer (South Korea)
+# 엔지니어가 더 빠르게 일하도록 돕는 도구를 만듭니다.
+
+<b>jaywapp@github</b>:~$ cat focus.txt
+now    AI agent workflows on Claude Code and Codex
+       # Claude Code·Codex 기반 AI 에이전트 워크플로
+before Windows desktop software in C# / .NET / WPF
+       # C#/.NET/WPF Windows 데스크톱 개발
+
+<b>jaywapp@github</b>:~$ tree ~/projects -L 2
+~/projects
+├── agent-tooling/                 # AI 에이전트 도구
+│   ├── <a href="https://github.com/jaywapp/p4-harness">p4-harness</a>             shared Perforce harness for Claude Code + Codex
+│   ├── <a href="https://github.com/jaywapp/task-token-meter">task-token-meter</a>       token usage per finished task
+│   ├── <a href="https://github.com/jaywapp/cc-jsonl-monitor">cc-jsonl-monitor</a>       Claude Code session log viewer
+│   ├── <a href="https://github.com/jaywapp/toss-readonly-mcp">toss-readonly-mcp</a>      read-only market data MCP
+│   └── <a href="https://github.com/jaywapp/jaywapp-marketplace">jaywapp-marketplace</a>    plugin marketplace
+├── desktop/                       # 데스크톱·엔진 도구
+│   ├── <a href="https://github.com/jaywapp/wam-releases">wam</a>                    Work As a Map, Windows app
+│   ├── <a href="https://github.com/jaywapp/UnrealEditorBridge">UnrealEditorBridge</a>     UE5 Editor ↔ .NET IPC
+│   └── <a href="https://github.com/jaywapp/jaywapp-libs">jaywapp-libs</a>           C# library monorepo
+└── apps/                          # 앱
+    ├── <a href="https://github.com/jaywapp/gyungchung">gyungchung</a>             futsal clubhouse + admin MCP
+    ├── <a href="https://github.com/jaywapp/vlytics">vlytics</a>                V-League prediction lab
+    └── <a href="https://github.com/jaywapp/asset-management">asset-management</a>       family asset dashboard
+
+<b>jaywapp@github</b>:~$ git log --career --oneline
+2023.07..now     <a href="https://www.smilegate.com/ko/">Smilegate</a>   Windows Client Software Developer
+2017.03..2023.06 <a href="http://www.penta-cube.com/">Pentacube</a>   Windows Client Software Developer
+
+<b>jaywapp@github</b>:~$ echo $STACK
+C#  .NET  WPF  TypeScript  Next.js  Python  Supabase  Claude Code  Codex  MCP
+
+<b>jaywapp@github</b>:~$ ls ~/links
+<a href="https://jaywapp.github.io">portfolio</a>  <a href="https://jaywapp.tistory.com">blog</a>  <a href="https://jaywapp-wiki.vercel.app">wiki</a>  <a href="https://www.linkedin.com/in/jaywapp16/">linkedin</a>  <a href="mailto:jaywapp16@gmail.com">mail</a>  <a href="https://github.com/jaywapp/projects">all-projects</a>
+</pre>
+
+**`tail -n 5 ~/blog/feed`** · 최근 글
+
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+
+<img src="https://raw.githubusercontent.com/jaywapp/jaywapp/output/stats.svg" alt="GitHub stats" height="140">
+
+<img src="https://raw.githubusercontent.com/jaywapp/jaywapp/output/github-contribution-grid-snake.svg" alt="Contribution graph" width="100%">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script>
+const NOTES=[
+ {name:"Minimal Editorial",tag:"concept-01 · 단일 컬럼 · 텍스트 중심",
+  look:"헤딩과 짧은 문장, 여백으로 읽히는 문서형 시안입니다. 배지를 쓰지 않아 외부 이미지가 깨질 일이 거의 없습니다.",
+  bi:"영어 문장을 먼저 쓰고, 바로 아래 줄에 작은 글씨로 한국어를 붙입니다.",
+  pros:["모바일에서 가장 잘 읽힘","유지보수가 가장 쉬움 (평범한 Markdown)"],
+  cons:["첫인상이 담백함","시각적 포인트는 활동 그래프 정도"]},
+ {name:"Card Grid",tag:"concept-02 · 2열 카드 · 배지 중심",
+  look:"가운데 정렬 헤더, 연락처 배지, 2열 카드 표로 구성합니다. 카테고리 배지 색으로 프로젝트 성격을 구분합니다.",
+  bi:"소개는 영어·한국어 두 열 표로 나란히 둡니다. 카드에서는 영어 설명 아래 한국어를 작게 붙입니다.",
+  pros:["첫 화면의 정보 밀도와 시각 효과가 가장 큼","프로젝트 성격이 색으로 바로 보임"],
+  cons:["모바일에서는 2열 표가 좁아짐","shields.io 배지에 의존"]},
+ {name:"Terminal",tag:"concept-03 · 셸 세션 · 모노스페이스",
+  look:"whoami, tree, git log 같은 명령어 흐름으로 자신을 소개합니다. 개발 생산성·도구 엔지니어라는 정체성이 가장 직접적으로 드러납니다.",
+  bi:"영어 출력 옆에 셸 주석(#)으로 한국어를 답니다.",
+  pros:["개성이 가장 뚜렷함","<pre> 안의 링크도 GitHub에서 클릭됨"],
+  cons:["모바일에서는 가로 스크롤 필요","프로젝트를 추가할 때 열 맞춤을 손봐야 함"]}
+];
+const md=document.getElementById('md'),notes=document.getElementById('notes'),gh=document.getElementById('gh');
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const POSTS='<ul class="posts">'+[1,2,3,4,5].map(i=>`<li><span>최근 글 제목 ${i}</span><em>RSS 자동 · 예시</em></li>`).join('')+'</ul>';
+function badge(url,big){
+  const path=decodeURIComponent(new URL(url).pathname.replace(/^\/badge\//,''));
+  const parts=path.split('-');const color=parts.pop();const msg=(parts.pop()||'').replace(/_/g,' ');const label=parts.join('-').replace(/_/g,' ');
+  const c=/^[0-9a-f]{3,6}$/i.test(color)?'#'+color:color;
+  return `<span class="badge${big?' big':''}">${label?`<span class="l">${esc(label)}</span>`:''}<span style="background:${c}">${esc(msg)}</span></span>`;
+}
+function render(i){
+  let src=document.getElementById('src'+i).textContent;
+  src=src.replace(/<!-- BLOG-POST-LIST:START -->[\s\S]*?<!-- BLOG-POST-LIST:END -->/,POSTS);
+  md.innerHTML=marked.parse(src,{gfm:true});
+  md.querySelectorAll('img').forEach(img=>{
+    const u=img.getAttribute('src')||'';let el;
+    if(u.includes('img.shields.io')){el=document.createElement('span');el.innerHTML=badge(u,u.includes('for-the-badge'));el=el.firstChild}
+    else if(u.includes('stats.svg')){el=document.createElement('div');el.className='ph stats';el.textContent='통계 카드 · Actions가 매일 생성 (커밋·PR·스타·주요 언어)'}
+    else if(u.includes('snake')){el=document.createElement('div');el.className='ph snake';el.textContent='기여 그래프 스네이크 · Actions가 매일 생성'}
+    if(el)img.replaceWith(el);
+  });
+  md.querySelectorAll('a').forEach(a=>{a.target='_blank';a.rel='noopener'});
+  const n=NOTES[i];
+  notes.innerHTML=`<div><div class="tag">${n.tag}</div><h2>${n.name}</h2></div>
+   <dl><div><dt>인상</dt><dd>${n.look}</dd></div><div><dt>영·한 병기 방식</dt><dd>${esc(n.bi)}</dd></div>
+   <div><dt>장점</dt><dd><ul>${n.pros.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></dd></div>
+   <div><dt>고려할 점</dt><dd><ul>${n.cons.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></dd></div></dl>`;
+  document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',t.dataset.i==i));
+  try{localStorage.setItem('concept',i)}catch(e){}
+}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>render(+t.dataset.i)));
+const wd=document.getElementById('w-desk'),wm=document.getElementById('w-mob');
+function width(m){gh.classList.toggle('mobile',m);wd.setAttribute('aria-pressed',!m);wm.setAttribute('aria-pressed',m)}
+wd.onclick=()=>width(false);wm.onclick=()=>width(true);
+let start=0;try{start=+(localStorage.getItem('concept')||0)}catch(e){}
+render([0,1,2].includes(start)?start:0);
+</script>

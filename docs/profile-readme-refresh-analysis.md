@@ -1,6 +1,6 @@
 # 프로필 README 개편 — 분석
 
-status: blocked (사용자 승인·질문 답변 대기)
+status: blocked (콘셉트 선택 대기)
 orchestrator: Claude
 
 ## 요청
@@ -31,7 +31,23 @@ orchestrator: Claude
 5. UX 게이트: 저장소 규칙상 주요 UX 변경은 콘셉트 3종 선택 후 구현 — 그대로 진행할지, 면제할지
 6. 반영 방식: 승인 후 이 브랜치에 커밋·푸시·Draft PR 생성까지 진행해도 되는지
 
-## 가정 (답변 전 잠정)
+## 답변 (2026-10-03)
+
+1. 언어: 영·한 병기
+2. 대표 프로젝트: Claude가 공개 저장소 중 최근 활동 기준으로 선정
+3. 경력·직함: Smilegate 재직, "Dev Productivity / Tooling Engineer" 유지
+4. 동적 요소: 도입 (통계 카드, 블로그 최신 글 자동 갱신, 기여 그래프)
+5. UX 게이트: 콘셉트 3종을 아티팩트로 제안 → https://claude.ai/artifact/WSBqLYbVt2U9JeJNpCanTA
+6. 반영: 기본 브랜치를 `main`으로 하고 `main`에 반영 (현재 기본 브랜치는 `master`, `main` 브랜치 없음)
+
+## 수집 결과 (T1·T2)
+
+- 세션 네트워크 정책상 GitHub REST API(저장소 목록)·shields.io·tistory·외부 통계 서비스에 접근 불가. 공개 저장소 README(raw.githubusercontent.com)로 설명을 확인했다. 언어·스타 수는 확인하지 못했다.
+- 링크 실시간 상태 확인은 이 환경에서 불가 → 구현 후 GitHub Actions 또는 사용자 확인으로 대체한다.
+- 선정한 대표 프로젝트(공개, README로 설명 확인): p4-harness, task-token-meter, cc-jsonl-monitor, toss-readonly-mcp, jaywapp-marketplace, wam-releases(WAM), UnrealEditorBridge, jaywapp-libs, gyungchung(+gyungchung-mcp), vlytics, asset-management.
+- 외부 통계 서비스(github-readme-stats 공개 인스턴스 등)는 가용성 위험이 있어, 통계 SVG와 스네이크를 이 저장소의 Actions가 `output` 브랜치에 직접 생성하는 방식으로 설계한다.
+
+## 가정
 
 - 비공개 저장소는 링크하지 않는다.
 - 이메일·포트폴리오·블로그·LinkedIn 연락 수단은 유지한다.
