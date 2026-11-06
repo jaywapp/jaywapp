@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="288" height="96" viewBox="0 0 288 96" role="img" aria-labelledby="title desc">
+  <title id="title">Writing</title>
+  <desc id="desc">Read Junyoung Park's technical writing.</desc>
+  <rect x="1" y="1" width="286" height="94" rx="8" fill="#090a09" stroke="#3d4433" stroke-width="2"/>
+  <g fill="none" stroke="#d5ff38" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M31 65L35 51L57 29L67 39L45 61L31 65ZM52 34L62 44M35 51L45 61M31 65L38 58"/>
+    <path d="M52 66H68"/>
+  </g>
+  <text x="86" y="58" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.3" fill="#f3f0e7">Writing</text>
+</svg>

@@ -10,7 +10,12 @@
 게임 개발팀의 도구와 시스템을 만듭니다.<br>
 복잡한 환경을 정리하고, 반복을 자동화하고, AI를 실제 업무에 연결합니다.
 
-**[Portfolio ↗](https://jaywapp.github.io/ko/) · [Writing ↗](https://jaywapp.tistory.com/) · [LinkedIn ↗](https://www.linkedin.com/in/jaywapp16/) · [Email ↗](mailto:jaywapp16@gmail.com)**
+<p>
+  <a href="https://jaywapp.github.io/ko/"><img src="docs/assets/profile/link-portfolio-v1.svg" alt="Portfolio" width="144" height="48" /></a>
+  <a href="https://jaywapp.tistory.com/"><img src="docs/assets/profile/link-writing-v1.svg" alt="Writing" width="144" height="48" /></a>
+  <a href="https://www.linkedin.com/in/jaywapp16/"><img src="docs/assets/profile/link-linkedin-v1.svg" alt="LinkedIn" width="144" height="48" /></a>
+  <a href="mailto:jaywapp16@gmail.com"><img src="docs/assets/profile/link-email-v1.svg" alt="Email" width="144" height="48" /></a>
+</p>
 
 <br>
 

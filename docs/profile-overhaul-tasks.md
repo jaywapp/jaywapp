@@ -15,10 +15,12 @@ orchestrator: Codex
 | account-settings | Codex | inherited | medium | profile-copy | sequential | Bio, pinned repos, repo metadata | 변경 후 공개 페이지 확인 | complete |
 | profile-simplify | Codex | inherited | medium | account-settings | sequential | README.md, profile-overhaul-analysis/design/tasks.md | 프로젝트 설명·제품 이미지 부재, 소개·경력 보존, 원격 전체 본문 일치 | complete |
 | role-update | Codex | inherited | medium | profile-simplify | sequential | README.md, hero*.svg, profile-settings.md, analysis/design/tasks | 사용자 진술 대조, SVG 시각 확인, Bio·원격 본문 확인 | complete |
-
 | editorial-art | Codex | inherited | high | role-update | editorial | editorial-v1*.svg | XML·900px/350px PNG 시각 확인 | complete |
 | editorial-copy | Codex | inherited | medium | role-update | editorial | README.md, profile-settings.md, analysis/design/tasks | 사실 보존·요약·프로젝트 설명 미추가 | complete |
 | editorial-publish | Codex | inherited | high | editorial-art, editorial-copy | sequential | 승인된 프로필 파일·Bio | 원격 원문 및 GitHub 시각 확인 | complete |
+
+| contact-art | Codex | inherited | medium | editorial-publish | contact | link-*-v1.svg | XML·144px 버튼 및 2×2 미리보기 | complete |
+| contact-integration | Codex | inherited | medium | contact-art | sequential | README.md, analysis/design/tasks | 기존 목적지 보존·GitHub 렌더링·전체 원문 | complete |
 
 현재 역할 반영은 README·Bio·배너의 동일 문구 결정에 의존하므로 부모 Codex가 순차 처리한다.
 
@@ -37,3 +39,4 @@ orchestrator: Codex
 - 2026-11-06 후속 수정: 메인 README의 프로젝트 기능 설명·제품 이미지·스택 태그·상태 문구 제거를 정적으로 확인. Hero·자기소개·기술 표·경력과 공개 프로젝트 링크 보존. 문서 수정만 포함하므로 실행 테스트 생략.
 - 2026-11-06 역할 수정: 사용자가 확인한 여섯 가지 업무를 네 영역으로 정리. 회사의 공식 직함이나 수치 성과는 추정하지 않았다. 프로젝트 이름·링크 구간 동일, 이전 경력 유지, SVG XML 유효성 및 데스크톱 900px·모바일 350px 미리보기 확인. Bio 저장 후 화면에서 확인.
 - 2026-11-06 인상 개선: 새 SVG 데스크톱 900px·모바일 350px 미리보기와 XML을 부모 Codex가 검토했다. 사용자 확인 업무·경력은 접힌 details에 보존하고 프로젝트 설명은 추가하지 않았다. Bio 저장 후 실제 화면 확인. 신규 파일명으로 기존 배너 캐시와 분리.
+- 2026-11-06 연락 버튼: 부모 Codex가 SVG XML·144×48 실크기 및 300px 2×2 미리보기를 확인했다. README에서 연락 링크 행 외 본문이 동일하고, 기존 네 목적지와 alt가 일치함을 확인했다. 애플리케이션 코드 변경이 없어 실행 테스트는 생략.
