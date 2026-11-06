@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(max-width: 600px)" srcset="docs/assets/profile/hero-mobile.svg" />
-    <img src="docs/assets/profile/hero.svg" width="100%" alt="Junyoung Park · jaywapp — Make work flow. Internal tools, build systems, AI automation." />
+    <source media="(max-width: 600px)" srcset="docs/assets/profile/hero-mobile.svg?v=20261106-role" />
+    <img src="docs/assets/profile/hero.svg?v=20261106-role" width="100%" alt="Junyoung Park · jaywapp — Make work flow. Internal tools, build systems, AI automation." />
   </picture>
 </p>
 
