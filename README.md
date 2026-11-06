@@ -1,38 +1,44 @@
 <p align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="docs/assets/profile/hero-mobile.svg" />
-    <img src="docs/assets/profile/hero.svg" width="100%" alt="Junyoung Park · jaywapp — Make work flow. Developer tools, AI automation, indie apps." />
+    <img src="docs/assets/profile/hero.svg" width="100%" alt="Junyoung Park · jaywapp — Make work flow. Internal tools, build systems, AI automation." />
   </picture>
 </p>
 
-**Software Engineer · Developer Productivity · AI Automation**
+**Software Engineer · Developer Productivity & Tooling**
 
-반복되는 개발 업무를 **도구와 자동화로 바꾸는 엔지니어, 박준영**입니다.<br>
-C#/.NET 기반 Windows 개발을 바탕으로, AI 에이전트 하네스부터 일상에서 직접 쓰는 웹 서비스까지 만듭니다.
+**게임 개발팀이 게임에 집중할 수 있도록, 도구와 환경을 만드는 엔지니어 박준영입니다.**
 
-I build developer tools, agent workflows, and practical apps — grounded in C#/.NET and Windows engineering.
+사내 웹 시스템과 게임 스크립트 도구부터 빌드팜, 업무 자동화, AI 활용 환경까지 개발팀에 필요한 기술 기반을 만들고 개선합니다.<br>
+기획자·개발자의 요청을 해결하고, 반복되는 불편을 찾아 개선을 제안합니다.
+
+I build internal tools, build infrastructure, and AI-assisted workflows that help game development teams focus on making games.
 
 **[Portfolio](https://jaywapp.github.io/ko/) · [Writing](https://jaywapp.tistory.com/) · [LinkedIn](https://www.linkedin.com/in/jaywapp16/) · [Email](mailto:jaywapp16@gmail.com)**
 
 ---
 
-## Engineering foundation
+## What I work on
 
-| Focus | What I work with |
+| Focus | Work |
 | :--- | :--- |
-| **Windows & tooling** | C# · .NET · WPF · Windows desktop |
-| **AI & automation** | Claude Code · Codex · MCP · Agent harness · Perforce · CI/CD |
-| **Web applications** | TypeScript · React · Next.js · Node.js |
+| **Internal tools** | 사내 웹 솔루션 구조 개편·리팩토링 · 게임 스크립트 전용 도구 개발 |
+| **Build & infrastructure** | TeamCity 게임 빌드팜 · 리버스 프록시 기반 웹 접근 구조 정리 · 서버 구성 |
+| **AI workflows** | 사내 AI 활용 환경(AX) 개선 · AI 기반 크래시 분석 흐름 구축 |
+| **Workflow automation** | Slack 봇 개발 · 팀 업무 흐름 개선 |
 
-### Experience
+**Technical background**<br>
+C# · .NET · WPF · TypeScript · React · Next.js · Node.js<br>
+Perforce · TeamCity · Claude Code · Codex · MCP · Agent harness
 
-**Smilegate** · Windows Client Software Developer<br>
-Jul 2023 — Present
+## Experience
+
+**Smilegate** · Game Development Team<br>
+Jul 2023 — Present<br>
+사내 도구·시스템, 빌드 환경, AI 업무 흐름 개발 및 개선
 
 **Pentacube** · Windows Client Software Developer<br>
 Mar 2017 — Jun 2023
-
-Windows 클라이언트 개발에서 쌓은 경험을 개발 도구, 워크플로우 자동화, AI를 활용한 개발 환경으로 넓혀가고 있습니다.
 
 ## Projects
 

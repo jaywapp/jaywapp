@@ -13,8 +13,11 @@ orchestrator: Codex
 | publish | Codex | inherited | high | artwork, profile-copy, extension-docs | sequential | 두 저장소의 승인된 문서 | 기본 브랜치 원격 재조회 | complete |
 | visual-qa | Codex | inherited | high | publish | sequential | README 및 자산 | GitHub 공개 렌더링·이미지 로드 | complete |
 | account-settings | Codex | inherited | medium | profile-copy | sequential | Bio, pinned repos, repo metadata | 변경 후 공개 페이지 확인 | complete |
-
 | profile-simplify | Codex | inherited | medium | account-settings | sequential | README.md, profile-overhaul-analysis/design/tasks.md | 프로젝트 설명·제품 이미지 부재, 소개·경력 보존, 원격 전체 본문 일치 | complete |
+
+| role-update | Codex | inherited | medium | profile-simplify | sequential | README.md, hero*.svg, profile-settings.md, analysis/design/tasks | 사용자 진술 대조, SVG 시각 확인, Bio·원격 본문 확인 | complete |
+
+현재 역할 반영은 README·Bio·배너의 동일 문구 결정에 의존하므로 부모 Codex가 순차 처리한다.
 
 2026-11-06 후속 수정은 같은 README와 관련 문서를 함께 바꾸므로 충돌 방지를 위해 부모 Codex가 순차 처리한다.
 
@@ -29,3 +32,4 @@ orchestrator: Codex
 - 2026-11-06: Bio·Website 저장 완료. 프로필 새로고침 후 반영 및 고정 순서 `key-man → cc-jsonl-monitor → p4-harness → jaywapp-libs` 유지 확인.
 - 2026-11-06: `jaywapp`, `cc-jsonl-monitor`, `p4-harness`의 Description·Website·Topics 저장 후 각 About 영역에서 반영 확인.
 - 2026-11-06 후속 수정: 메인 README의 프로젝트 기능 설명·제품 이미지·스택 태그·상태 문구 제거를 정적으로 확인. Hero·자기소개·기술 표·경력과 공개 프로젝트 링크 보존. 문서 수정만 포함하므로 실행 테스트 생략.
+- 2026-11-06 역할 수정: 사용자가 확인한 여섯 가지 업무를 네 영역으로 정리. 회사의 공식 직함이나 수치 성과는 추정하지 않았다. 프로젝트 이름·링크 구간 동일, 이전 경력 유지, SVG XML 유효성 및 데스크톱 900px·모바일 350px 미리보기 확인. Bio 저장 후 화면에서 확인.

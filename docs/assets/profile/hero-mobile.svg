@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" role="img" aria-labelledby="title desc">
   <title id="title">Junyoung Park — Make work flow.</title>
-  <desc id="desc">Jaywapp engineering. Developer tools, AI automation, and indie apps. A compact mobile composition in navy, ivory, and mint.</desc>
+  <desc id="desc">Jaywapp engineering. Internal tools, build systems, and AI automation. A compact mobile composition in navy, ivory, and mint.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop stop-color="#101e2e"/>
@@ -21,8 +21,8 @@
     <text x="27" y="207" font-size="76" font-weight="700" letter-spacing="-3.8" fill="#f4f7fc">Make work</text>
     <text x="27" y="287" font-size="76" font-weight="700" letter-spacing="-3.8" fill="#7af4cc">flow.</text>
     <path d="M32 322H84" stroke="#7af4cc" stroke-width="3"/>
-    <text x="31" y="362" font-size="22" letter-spacing="1" fill="#a5b9c7">DEVELOPER TOOLS / AI AUTOMATION</text>
-    <text x="31" y="395" font-size="22" letter-spacing="1" fill="#a5b9c7">INDIE APPS</text>
+    <text x="31" y="362" font-size="22" letter-spacing="1" fill="#a5b9c7">INTERNAL TOOLS / AI AUTOMATION</text>
+    <text x="31" y="395" font-size="22" letter-spacing="1" fill="#a5b9c7">BUILD SYSTEMS</text>
   </g>
   <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
     <path d="M411 229H440V276H468V194H524V245H496" stroke="#24434f" stroke-width="22"/>

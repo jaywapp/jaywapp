@@ -5,7 +5,7 @@
 ## Bio
 
 ```text
-Developer Productivity Engineer · C#/.NET · AI agents & automation · Building tools that make work flow.
+Developer Productivity & Tooling · Internal tools, build infrastructure & AI workflows for game development teams.
 ```
 
 - Name: 기존 `Junyoung Park` 유지.
@@ -35,3 +35,5 @@ Developer Productivity Engineer · C#/.NET · AI agents & automation · Building
 - Bio·Website·고정 저장소: 2026-11-06 적용 완료. 프로필을 새로 불러와 값과 대표작 순서가 유지되는 것을 확인했다.
 - `jaywapp`, `cc-jsonl-monitor`, `p4-harness`의 Description·Website·Topics: 2026-11-06 적용 완료. 각 저장소 About 영역에서 저장된 값을 확인했다.
 - 저장소 공개 범위는 변경하지 않는다.
+
+- 2026-11-06 현재 업무 확인 후 Bio를 Developer Productivity & Tooling 중심으로 갱신하고 저장된 화면에서 확인했다.
