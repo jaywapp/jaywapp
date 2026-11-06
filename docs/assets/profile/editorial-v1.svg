@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-labelledby="title desc">
+  <title id="title">Jaywapp / Junyoung Park — I build what builders need.</title>
+  <desc id="desc">Tools, systems, and AI. An editorial wordmark with oversized ivory and acid lime typography on ink black.</desc>
+  <rect width="1200" height="450" fill="#090a09"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="51" font-size="23" font-weight="700" letter-spacing="3.2" fill="#f3f0e7">JAYWAPP</text>
+    <text x="204" y="51" font-size="23" fill="#6d7165">/</text>
+    <text x="236" y="51" font-size="23" font-weight="400" letter-spacing="2.1" fill="#f3f0e7">JUNYOUNG PARK</text>
+    <path d="M48 78H1152" stroke="#52564b" stroke-width="1"/>
+    <text x="40" y="222" font-size="142" font-weight="900" letter-spacing="-6.5" fill="#f3f0e7">I build what</text>
+    <text x="40" y="357" font-size="142" font-weight="900" letter-spacing="-6.5" fill="#d5ff38">builders need.</text>
+    <text x="48" y="416" font-size="21" font-weight="700" letter-spacing="3.4" fill="#f3f0e7">TOOLS / SYSTEMS / AI</text>
+  </g>
+  <rect x="1107" y="398" width="45" height="18" fill="#d5ff38"/>
+</svg>

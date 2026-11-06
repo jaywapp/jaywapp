@@ -5,7 +5,7 @@
 ## Bio
 
 ```text
-Developer Productivity & Tooling · Internal tools, build infrastructure & AI workflows for game development teams.
+I build what builders need. Tools, systems & AI workflows for game development teams.
 ```
 
 - Name: 기존 `Junyoung Park` 유지.
@@ -37,3 +37,5 @@ Developer Productivity & Tooling · Internal tools, build infrastructure & AI wo
 - 저장소 공개 범위는 변경하지 않는다.
 
 - 2026-11-06 현재 업무 확인 후 Bio를 Developer Productivity & Tooling 중심으로 갱신하고 저장된 화면에서 확인했다.
+
+- 2026-11-06 인상 개선: Bio를 새 슬로건과 짧은 업무 범위로 줄이고 저장된 화면에서 확인했다.

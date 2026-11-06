@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="520" viewBox="0 0 600 520" role="img" aria-labelledby="title desc">
+  <title id="title">Jaywapp / Junyoung Park — I build what builders need.</title>
+  <desc id="desc">Tools, systems, and AI. A mobile editorial wordmark with oversized ivory and acid lime typography on ink black.</desc>
+  <rect width="600" height="520" fill="#090a09"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="28" y="47" font-size="22" font-weight="700" letter-spacing="2.1" fill="#f3f0e7">JAYWAPP</text>
+    <text x="175" y="47" font-size="22" fill="#6d7165">/</text>
+    <text x="202" y="47" font-size="22" font-weight="400" letter-spacing="1.2" fill="#f3f0e7">JUNYOUNG PARK</text>
+    <path d="M28 75H572" stroke="#52564b" stroke-width="1"/>
+    <text x="21" y="185" font-size="95" font-weight="900" letter-spacing="-5.2" fill="#f3f0e7">I build what</text>
+    <text x="21" y="297" font-size="118" font-weight="900" letter-spacing="-5.6" fill="#d5ff38">builders</text>
+    <text x="21" y="408" font-size="118" font-weight="900" letter-spacing="-5.6" fill="#d5ff38">need.</text>
+    <text x="28" y="485" font-size="23" font-weight="700" letter-spacing="2.2" fill="#f3f0e7">TOOLS / SYSTEMS / AI</text>
+  </g>
+  <rect x="535" y="467" width="37" height="18" fill="#d5ff38"/>
+</svg>
