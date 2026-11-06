@@ -14,6 +14,10 @@ orchestrator: Codex
 | visual-qa | Codex | inherited | high | publish | sequential | README 및 자산 | GitHub 공개 렌더링·이미지 로드 | complete |
 | account-settings | Codex | inherited | medium | profile-copy | sequential | Bio, pinned repos, repo metadata | 변경 후 공개 페이지 확인 | complete |
 
+| profile-simplify | Codex | inherited | medium | account-settings | sequential | README.md, profile-overhaul-analysis/design/tasks.md | 프로젝트 설명·제품 이미지 부재, 소개·경력 보존, 원격 전체 본문 일치 | complete |
+
+2026-11-06 후속 수정은 같은 README와 관련 문서를 함께 바꾸므로 충돌 방지를 위해 부모 Codex가 순차 처리한다.
+
 ## 검증 기록
 
 - 2026-11-06: 독립 검토에서 경력·기능 과장 및 비공개 소스 링크 없음 확인.
@@ -24,3 +28,4 @@ orchestrator: Codex
 - 공개 링크 12개 HTTP 200. LinkedIn은 자동 요청에 HTTP 999를 반환하여 직접 접근 미검증; 기존 공개 프로필 URL 유지.
 - 2026-11-06: Bio·Website 저장 완료. 프로필 새로고침 후 반영 및 고정 순서 `key-man → cc-jsonl-monitor → p4-harness → jaywapp-libs` 유지 확인.
 - 2026-11-06: `jaywapp`, `cc-jsonl-monitor`, `p4-harness`의 Description·Website·Topics 저장 후 각 About 영역에서 반영 확인.
+- 2026-11-06 후속 수정: 메인 README의 프로젝트 기능 설명·제품 이미지·스택 태그·상태 문구 제거를 정적으로 확인. Hero·자기소개·기술 표·경력과 공개 프로젝트 링크 보존. 문서 수정만 포함하므로 실행 테스트 생략.
