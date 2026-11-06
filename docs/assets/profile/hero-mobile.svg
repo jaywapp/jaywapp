@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" role="img" aria-labelledby="title desc">
+  <title id="title">Junyoung Park — Make work flow.</title>
+  <desc id="desc">Jaywapp engineering. Developer tools, AI automation, and indie apps. A compact mobile composition in navy, ivory, and mint.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#101e2e"/>
+      <stop offset="0.55" stop-color="#08111f"/>
+      <stop offset="1" stop-color="#0b252c"/>
+    </linearGradient>
+    <linearGradient id="trace" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7af4cc"/>
+      <stop offset="1" stop-color="#76cae5"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="420" rx="22" fill="url(#background)"/>
+  <rect x="0.75" y="0.75" width="598.5" height="418.5" rx="21.25" fill="none" stroke="#37505c" stroke-opacity="0.58" stroke-width="1.5"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <circle cx="34" cy="43" r="5" fill="#7af4cc"/>
+    <text x="51" y="51" font-size="22" font-weight="700" letter-spacing="2" fill="#a5b9c7">JAYWAPP / ENGINEERING</text>
+    <text x="29" y="121" font-size="42" font-weight="700" letter-spacing="0.2" fill="#f4f7fc">JUNYOUNG PARK</text>
+    <text x="27" y="207" font-size="76" font-weight="700" letter-spacing="-3.8" fill="#f4f7fc">Make work</text>
+    <text x="27" y="287" font-size="76" font-weight="700" letter-spacing="-3.8" fill="#7af4cc">flow.</text>
+    <path d="M32 322H84" stroke="#7af4cc" stroke-width="3"/>
+    <text x="31" y="362" font-size="22" letter-spacing="1" fill="#a5b9c7">DEVELOPER TOOLS / AI AUTOMATION</text>
+    <text x="31" y="395" font-size="22" letter-spacing="1" fill="#a5b9c7">INDIE APPS</text>
+  </g>
+  <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M411 229H440V276H468V194H524V245H496" stroke="#24434f" stroke-width="22"/>
+    <path d="M418 222H447V269H475V187H531V238H503" stroke="url(#trace)" stroke-width="11"/>
+    <path d="M475 286V302H554V269" stroke="#517983" stroke-width="1.5"/>
+  </g>
+  <rect x="550" y="265" width="8" height="8" rx="1" fill="#08111f" stroke="#7af4cc" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,21 @@
+# GitHub 프로필 전면 개편 — 작업
+
+orchestrator: Codex
+
+모델은 현재 세션과 동일한 Codex 모델을 상속한다. 독립적인 설치 문서와 SVG 작업은 별도 Codex 세션으로 진행하고 통합·게시·검증은 부모가 순서대로 담당한다.
+
+| ID | owner | model | effort | depends_on | parallel_group | files | verification | status |
+|---|---|---|---|---|---|---|---|---|
+| scope | Codex | inherited | high | — | planning | profile-overhaul-analysis/design/tasks | 원격 README·메타데이터·지침 확인 | complete |
+| artwork | Codex | inherited | high | scope | authoring | docs/assets/profile/*.svg | XML 검사, PNG 시각 검토 | complete |
+| extension-docs | Codex | inherited | medium | scope | authoring | cc-jsonl-monitor/README.md | 설치 절차와 기존 본문 보존 | complete |
+| profile-copy | Codex | inherited | high | scope | authoring | README.md, archive, profile-settings.md | 사실·링크·모바일 가독성 | complete |
+| publish | Codex | inherited | high | artwork, profile-copy, extension-docs | sequential | 두 저장소의 승인된 문서 | 기본 브랜치 원격 재조회 | in_progress |
+| visual-qa | Codex | inherited | high | publish | sequential | README 및 자산 | GitHub 공개 렌더링·이미지 로드 | pending |
+| account-settings | Codex | inherited | medium | profile-copy | sequential | Bio, pinned repos, repo metadata | 변경 후 공개 페이지 확인 | blocked: browser sign-in required |
+
+## 검증 기록
+
+- 2026-11-06: 독립 검토에서 경력·기능 과장 및 비공개 소스 링크 없음 확인.
+- 2026-11-06: CC JSONL Monitor 설치 안내 기본 브랜치 게시 및 전체 원문 read-back 일치. Commit `c346a5241d0b27cab83d0c2233af9a557cdb420d`.
+- 원문 백업이 기준 HEAD의 README 바이트와 동일함 확인.

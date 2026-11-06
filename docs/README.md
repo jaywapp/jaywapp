@@ -14,3 +14,11 @@
 - 시크릿·토큰·키·`.env` 값은 문서·로그·커밋에 기록하지 않습니다.
 
 이 저장소의 기존 문서 인덱스와 생성 규칙이 있으면 그 규칙을 우선하며, 기존 파일을 덮어쓰지 않습니다.
+
+## 프로필 개편 (2026-11-06)
+
+- [요구사항과 범위](profile-overhaul-analysis.md)
+- [콘텐츠·시각 설계](profile-overhaul-design.md)
+- [작업과 검증 상태](profile-overhaul-tasks.md)
+- [Bio·고정 저장소·메타데이터 적용안](profile-settings.md)
+- [이전 프로필 원문](archive/profile-before-20261106.md)
