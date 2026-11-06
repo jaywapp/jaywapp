@@ -31,6 +31,6 @@ Developer Productivity Engineer · C#/.NET · AI agents & automation · Building
 
 ## 실제 적용 상태
 
-- README·자산: 게시 및 원격 검증 예정.
+- README·자산: 기본 브랜치 게시 및 전체 원문 재조회 검증 완료. 공개 GitHub 화면에서 이미지 로드 확인.
 - Bio·고정 저장소·Description·Topics: 미적용. GitHub 연결 도구에 해당 쓰기 기능이 없고 브라우저 로그인 필요.
 - 저장소 공개 범위는 변경하지 않는다.
